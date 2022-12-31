@@ -1,11 +1,11 @@
 package sorting;
 public class bubbleSort {
     public static void main(String[] args){
-        int[] arr = new int[10];
+        int[] arr = new int[100000];
 
-        stuffs.fillInt(arr);
+        stuffs.fillInt(arr,10000000);
         stuffs.print(arr);
-        
+        System.out.println(stuffs.isSorted(arr));
         boolean changesDone = true;
         while(changesDone){
             changesDone=false;
@@ -21,5 +21,6 @@ public class bubbleSort {
 
         
         stuffs.print(arr);
+        System.out.println(stuffs.isSorted(arr));
     }
 }

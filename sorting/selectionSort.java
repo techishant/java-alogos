@@ -1,30 +1,24 @@
 package sorting;
 
 public class selectionSort {
-
-
-    public static int smallest(int[] arr, int base){
-        int smallestInd = base;
-        for (int i = base; i<arr.length-1; i++){
-            if (arr[smallestInd] > arr[i]){
-                smallestInd = i;
-            }
-        }
-        return smallestInd;
-    }
-
-    public static void main(String[] args){
-        int[] arr = new int[10];
-        stuffs.fillInt(arr);
-        stuffs.print(arr);
-        
-        for (int i = 0; i<arr.length; i++){
-            int smallest = smallest(arr, i);
-            int temp = arr[i];
-            arr[i] = arr[smallest];
-            arr[smallest] = temp;
-        }
-
-        stuffs.print(arr);
-    }
+     public static void main(){
+         int[] arr = {3,4,7,1,2};
+         int minInd;
+         
+         for(int i = 0; i<arr.length; i++){
+             minInd = i;
+             for(int j = i; j<arr.length; j++){
+                 if(arr[j]<arr[minInd]){
+                     minInd = j;
+                 }
+             }
+             arr[i] = arr[minInd] + arr[i];
+             arr[minInd] = arr[i] - arr[minInd];
+             arr[i] = arr[i] - arr[minInd];
+         }
+         
+         for(int i:arr){
+             System.out.print(i + ", ");
+         }
+     }
 }
